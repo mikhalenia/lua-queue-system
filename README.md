@@ -8,7 +8,7 @@ For example we've got the banners system with a lot of tables which are responsi
 
 I want to know which banners I can show on the special web page or mobile application at this moment. I want to get it remotely by HTTP protocol in JSON format just sending a type of object. Some banners can be limited by the number of impressions.
 
-If we use relational database it can be a problem on the applications with hight load, because for reading we have to use to many "JOIN" consturctions in our SQL and every request we have to connect to DB server and select some data. Also at the same time an administrator want to add new banner and show some statistics to client. That mean we have a lot of write operations. Summary it makes a high load to database server.
+If we use relational database it can be a problem on the applications with hight load, because for reading we have to use to many JOIN consturctions in our SQL and every request we have to connect to DB server and select some data. Also at the same time an administrator want to add new banner and show some statistics to client. That mean we have a lot of write operations. Summary it makes a high load to database server.
 
 Fortunately we can aggregate it by time to queue something like this:
 ```
