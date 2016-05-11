@@ -50,6 +50,7 @@ OK
 * cnt_max - how many times can we show this object
 
 Let's create the queue which will have been working for 1 hour:
+
 For creating a time label use this algorithm:
 ```
 local interval = 3600
