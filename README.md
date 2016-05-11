@@ -27,8 +27,8 @@ Fortunately we can aggregate it by time to queue something like this:
 }
 ```
 Providing that:
--type{i}_tm{j} is an endless queue which created by list in Redis and stores the type of objects which we can show at this moment. type{i} - type of object, tm{j} - label
--t{i}h{k} is a hash in Redis which stores an information about objects. t{i} - type of object, h{k} - some object
+* type{i}_tm{j} is an endless queue which created by list in Redis and stores the type of objects which we can show at this moment. type{i} - type of object, tm{j} - label
+* t{i}h{k} is a hash in Redis which stores an information about objects. t{i} - type of object, h{k} - some object
 
 Now we have to create some keys in Redis and add them to queue. Let's do that.
 
@@ -45,9 +45,9 @@ OK
 127.0.0.1:6379> hmset t2h2 is_cnt 0 cnt 0 name "Type2 Object2"
 OK
 ```
--is_cnt - flag which limits displaying by the number of impressions
--cnt - the current number of impressions
--cnt_max - how many times can we show this object
+* is_cnt - flag which limits displaying by the number of impressions
+* cnt - the current number of impressions
+* cnt_max - how many times can we show this object
 
 Let's create the queue which will have been working for 1 hour:
 For creating a time label use this algorithm:
@@ -85,6 +85,6 @@ Restart server and try:
 {"cnt":"0","name":"Type1 Object3","status":"OK"}
 ```
 
-This solution helps to remove the load from the DB server.
+This solution helps to remove the load from our DB server.
 
 Hope it helps in solving your problems.
